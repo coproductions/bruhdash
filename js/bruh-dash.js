@@ -193,5 +193,43 @@ global.bruhdash = {
       count = 0;
     };
     return newArray;
+  },
+
+  flatten: function(array,isDeep){
+    var newArray = [];
+    var iterate = function(nestedArray){
+      for (var i = 0; i < nestedArray.length; i++) {
+        if(!Array.isArray(nestedArray[i])){
+          newArray.push(nestedArray[i])
+        }
+        else{
+          iterate(nestedArray[i]);
+        }
+      };
+    };
+    if(!isDeep){
+      for(var i = 0; i < array.length; i++) {
+        if(Array.isArray(array[i])){
+          for (var j = 0; j < array[i].length; j++) {
+            newArray.push(array[i][j])
+          };
+        }
+        else{
+          newArray.push(array[i])
+        }
+      };
+    }
+    else{
+       for (var i = 0; i < array.length; i++) {
+        if(Array.isArray(array[i])){
+          iterate(array[i])
+        }
+        else{
+          newArray.push(array[i])
+        }
+      };
+
+    }
+    return newArray;
   }
 };
