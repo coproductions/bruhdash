@@ -187,8 +187,19 @@ global.bruhdash = {
     return newArray;
   },
 
-  unzip: function () {
-
+  unzip: function (array) {
+    var n=0;
+    var newArray = [];
+    var tempArray = [];
+    while(n<array[0].length){
+      for(var i=0; i<array.length; i++){
+        tempArray.push(array[i][n])
+      }
+      n++;
+      newArray.push(tempArray);
+       tempArray = [];
+    }
+    return newArray;
   },
 
   without: function() {
