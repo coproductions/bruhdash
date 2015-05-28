@@ -17,7 +17,6 @@ global.bruhdash = {
     for(var i=0; i<array.length; i++){
       if(array[i]){
         newArray.push(array[i])
-
       }
 
     }
@@ -47,7 +46,12 @@ global.bruhdash = {
 
   },
 
-  dropRight: function() {
+  dropRight: function(array,n) {
+    n = n || 1;
+    for(var i=1;i<=n;i++ ){
+      array.pop();
+    }
+    return array;
 
   },
 
