@@ -6,10 +6,8 @@ global.bruhdash = {
     size = size || 1;
     for(var i=0; i<array.length; i+=size){
       newArray.push(array.slice(i,i+size))
-
     }
     return newArray;
-
   },
 
   compact: function(array) {
@@ -18,10 +16,8 @@ global.bruhdash = {
       if(array[i]){
         newArray.push(array[i])
       }
-
     }
     return newArray;
-
   },
 
   difference: function(arr1,arr2) {
@@ -30,11 +26,8 @@ global.bruhdash = {
       if(arr2.indexOf(arr1[i])<0){
         newArray.push(arr1[i])
       }
-
     }
     return newArray;
-
-
   },
 
   drop: function(array,amount){
@@ -42,8 +35,6 @@ global.bruhdash = {
     amount = amount || 1;
     newArray.splice(0,amount);
     return newArray;
-
-
   },
 
   dropRight: function(array,n) {
@@ -53,7 +44,6 @@ global.bruhdash = {
       newArray.pop();
     }
     return newArray;
-
   },
 
   fill: function(array, value, start, end) {
@@ -63,13 +53,10 @@ global.bruhdash = {
       array[i]=value;
     }
     return array;
-
-
   },
 
   first: function (array) {
     return array[0];
-
   },
 
   indexOf: function (array,value,fromIndex) {
@@ -80,17 +67,14 @@ global.bruhdash = {
       }
     }
     return -1;
-
   },
 
   initial: function (array) {
     return array.slice(0,array.length-1);
-
   },
 
   last: function (array) {
     return array[array.length-1];
-
   },
 
   lastIndexof: function (array,value,fromIndex) {
@@ -101,7 +85,6 @@ global.bruhdash = {
       }
     }
     return -1;
-
   },
 
   pull: function (array,values) {
@@ -110,19 +93,15 @@ global.bruhdash = {
     for(var i=0; i<array.length; i++){
       counter = 0;
       for(var j=1; j<arguments.length; j++){
-
         if(array[i]===arguments[j]){
           counter++;
-
         }
       }
       if(counter === 0){
         newArray.push(array[i])
       }
     }
-    //array = newArray;
     return newArray;
-
   },
 
   pullAt: function (array,indexes) {
@@ -134,13 +113,11 @@ global.bruhdash = {
       array.splice(arguments[i],1)
     }
     return newArray;
-
   },
 
   rest: function (array) {
     array.shift()
     return array;
-
   },
 
   slice: function (array,start,end) {
@@ -169,7 +146,6 @@ global.bruhdash = {
       newArray.unshift(array[i])
     }
     return newArray;
-
   },
 
   zip: function (arrays) {
