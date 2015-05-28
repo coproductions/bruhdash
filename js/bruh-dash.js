@@ -88,15 +88,40 @@ global.bruhdash = {
 
   },
 
-  last: function () {
+  last: function (array) {
+    return array[array.length-1];
 
   },
 
-  lastIndexof: function () {
+  lastIndexof: function (array,value,fromIndex) {
+      fromIndex = fromIndex || array.length-1;
+      for(var i=fromIndex; i>=0; i--){
+      if(array[i]===value){
+        return i;
+      }
+    }
+    return -1;
 
   },
 
-  pull: function () {
+  pull: function (array,values) {
+    var newArray = [];
+    var counter = 0;
+    for(var i=0; i<array.length; i++){
+      counter = 0;
+      for(var j=1; j<arguments.length; j++){
+
+        if(array[i]===arguments[j]){
+          counter++;
+
+        }
+      }
+      if(counter === 0){
+        newArray.push(array[i])
+      }
+    }
+    //array = newArray;
+    return newArray;
 
   },
 
