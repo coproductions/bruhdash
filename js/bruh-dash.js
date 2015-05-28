@@ -125,7 +125,15 @@ global.bruhdash = {
 
   },
 
-  pullAt: function () {
+  pullAt: function (array,indexes) {
+    var newArray = [];
+    for(var i=1; i<arguments.length; i++){
+      newArray.push(array[arguments[i]])
+    }
+    for(var i=arguments.length-1; i>0; i--){
+      array.splice(arguments[i],1)
+    }
+    return newArray;
 
   },
 
