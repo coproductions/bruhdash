@@ -219,16 +219,9 @@ global.bruhdash = {
         }
       };
     }
-    else{
-       for (var i = 0; i < array.length; i++) {
-        if(Array.isArray(array[i])){
-          iterate(array[i])
-        }
-        else{
-          newArray.push(array[i])
-        }
-      };
 
+    else{
+        iterate(array)
     }
     return newArray;
   }
