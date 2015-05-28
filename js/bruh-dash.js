@@ -202,7 +202,20 @@ global.bruhdash = {
     return newArray;
   },
 
-  without: function() {
-
+  without: function(array,exclude) {
+    var newArray = [];
+    var count = 0;
+    for (var i = 0; i< array.length; i++) {
+      for (var j = 1; j < arguments.length; j++) {
+        if(array[i]===arguments[j]){
+          count++;
+        }
+      };
+      if(count===0){
+        newArray.push(array[i])
+      }
+      count = 0;
+    };
+    return newArray;
   }
 };
