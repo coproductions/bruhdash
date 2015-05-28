@@ -67,11 +67,19 @@ global.bruhdash = {
 
   },
 
-  first: function () {
+  first: function (array) {
+    return array[0];
 
   },
 
-  indexOf: function () {
+  indexOf: function (array,value,fromIndex) {
+    fromIndex = fromIndex || 0;
+    for(var i=fromIndex; i<array.length; i++){
+      if(array[i]===value){
+        return i;
+      }
+    }
+    return -1;
 
   },
 
