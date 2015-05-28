@@ -48,10 +48,11 @@ global.bruhdash = {
 
   dropRight: function(array,n) {
     n = n || 1;
+    newArray = array;
     for(var i=1;i<=n;i++ ){
-      array.pop();
+      newArray.pop();
     }
-    return array;
+    return newArray;
 
   },
 
