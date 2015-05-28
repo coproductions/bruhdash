@@ -137,19 +137,38 @@ global.bruhdash = {
 
   },
 
-  rest: function () {
+  rest: function (array) {
+    array.shift()
+    return array;
 
   },
 
-  slice: function () {
-
+  slice: function (array,start,end) {
+    end = end || array.length;
+    start = start || 0;
+    var newArray = [];
+    for(var i=start; i<end; i++){
+      newArray.push(array[i])
+    }
+    return newArray;
   },
 
-  take: function () {
-
+  take: function (array,n) {
+    n = n || 1;
+    var newArray = [];
+    for(var i=0; i<=n; i++){
+      newArray.push(array[i])
+    }
+    return newArray;
   },
 
-  takeRight: function () {
+  takeRight: function (array,n) {
+    n = n || 1;
+    var newArray = [];
+    for(var i=array.length-1; i>=array.length-n; i--){
+      newArray.unshift(array[i])
+    }
+    return newArray;
 
   },
 
