@@ -59,7 +59,7 @@ global.bruhdash = {
   fill: function(array, value, start, end) {
     start = start || 0;
     end = end || array.length;
-    for(var i=start; i<end;i++){
+    for(var i=start; i<end; i++){
       array[i]=value;
     }
     return array;
@@ -83,7 +83,8 @@ global.bruhdash = {
 
   },
 
-  inital: function () {
+  initial: function (array) {
+    return array.slice(0,array.length-1);
 
   },
 
