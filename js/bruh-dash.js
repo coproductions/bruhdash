@@ -38,10 +38,10 @@ global.bruhdash = {
   },
 
   drop: function(array,amount){
-    var newArray = array.splice;
+    var newArray = array;
     amount = amount || 1;
-    newArray = array.splice(0,amount);
-    return array;
+    newArray.splice(0,amount);
+    return newArray;
 
 
   },
