@@ -173,7 +173,7 @@ global.bruhdash = {
       }
       n++;
       newArray.push(tempArray);
-       tempArray = [];
+      tempArray = [];
     }
     return newArray;
   },
