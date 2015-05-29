@@ -183,7 +183,7 @@ global.bruhdash = {
     };
     var newArray = [];
     var tempArray = [];
-    while(n++<longest){
+    while(n++ < longest){
       for(var i=0; i<array.length; i++){
         if(array[i][n] !== undefined && array[i] !== undefined){
           tempArray.push(array[i][n])
