@@ -152,11 +152,21 @@ global.bruhdash = {
     var n=0;
     var newArray = [];
     var tempArray = [];
-    while(n<arguments[0].length){
-      for(var i=0; i<arguments.length; i++){
-        tempArray.push(arguments[i][n])
+    var longest = 0;
+    for (var k = 0; k < arguments.length; k++) {
+      if(longest<arguments[k].length){
+        longest = arguments[k].length;
       }
-      n++;
+    };
+    while(n++ <longest){
+      for(var i=0; i<arguments.length; i++){
+        if(arguments[i]!== undefined && arguments[i][n]!==undefined){
+          tempArray.push(arguments[i][n])
+        }
+        else{
+          tempArray.push(null)
+        }
+      }
       newArray.push(tempArray);
        tempArray = [];
     }
@@ -173,7 +183,7 @@ global.bruhdash = {
     };
     var newArray = [];
     var tempArray = [];
-    while(n<longest){
+    while(n++<longest){
       for(var i=0; i<array.length; i++){
         if(array[i][n] !== undefined && array[i] !== undefined){
           tempArray.push(array[i][n])
@@ -182,7 +192,6 @@ global.bruhdash = {
           tempArray.push(null)
         }
       }
-      n++;
       newArray.push(tempArray);
       tempArray = [];
     }
