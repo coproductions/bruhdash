@@ -5,7 +5,7 @@ global.bruhdash = {
     var newArray = [];
     size = size || 1;
     for(var i=0; i<array.length; i+=size){
-      newArray.push(array.slice(i,i+size))
+      newArray.push(array.slice(i,i+size));
     }
     return newArray;
   },
@@ -14,7 +14,7 @@ global.bruhdash = {
     var newArray = [];
     for(var i=0; i<array.length; i++){
       if(array[i]){
-        newArray.push(array[i])
+        newArray.push(array[i]);
       }
     }
     return newArray;
@@ -24,7 +24,7 @@ global.bruhdash = {
     var newArray = [];
     for(var i=0; i<arr1.length; i++){
       if(arr2.indexOf(arr1[i])<0){
-        newArray.push(arr1[i])
+        newArray.push(arr1[i]);
       }
     }
     return newArray;
@@ -98,7 +98,7 @@ global.bruhdash = {
         }
       }
       if(counter === 0){
-        newArray.push(array[i])
+        newArray.push(array[i]);
       }
     }
     return newArray;
@@ -107,16 +107,16 @@ global.bruhdash = {
   pullAt: function (array,indexes) {
     var newArray = [];
     for(var i=1; i<arguments.length; i++){
-      newArray.push(array[arguments[i]])
+      newArray.push(array[arguments[i]]);
     }
-    for(var i=arguments.length-1; i>0; i--){
-      array.splice(arguments[i],1)
+    for(var j = arguments.length - 1 ; i > 0 ; j--){
+      array.splice(arguments[j],1);
     }
     return newArray;
   },
 
   rest: function (array) {
-    array.shift()
+    array.shift();
     return array;
   },
 
@@ -125,7 +125,7 @@ global.bruhdash = {
     start = start || 0;
     var newArray = [];
     for(var i=start; i<end; i++){
-      newArray.push(array[i])
+      newArray.push(array[i]);
     }
     return newArray;
   },
@@ -134,7 +134,7 @@ global.bruhdash = {
     n = n || 1;
     var newArray = [];
     for(var i=0; i<=n; i++){
-      newArray.push(array[i])
+      newArray.push(array[i]);
     }
     return newArray;
   },
@@ -143,7 +143,7 @@ global.bruhdash = {
     n = n || 1;
     var newArray = [];
     for(var i=array.length-1; i>=array.length-n; i--){
-      newArray.unshift(array[i])
+      newArray.unshift(array[i]);
     }
     return newArray;
   },
@@ -157,14 +157,14 @@ global.bruhdash = {
       if(longest<arguments[k].length){
         longest = arguments[k].length;
       }
-    };
+    }
     while(n++ <longest){
       for(var i=0; i<arguments.length; i++){
         if(arguments[i]!== undefined && arguments[i][n]!==undefined){
-          tempArray.push(arguments[i][n])
+          tempArray.push(arguments[i][n]);
         }
         else{
-          tempArray.push(null)
+          tempArray.push(null);
         }
       }
       newArray.push(tempArray);
@@ -180,16 +180,16 @@ global.bruhdash = {
       if(array[k].length>longest){
         longest = array[k].length;
       }
-    };
+    }
     var newArray = [];
     var tempArray = [];
     while(n++ < longest){
       for(var i=0; i<array.length; i++){
         if(array[i][n] !== undefined && array[i] !== undefined){
-          tempArray.push(array[i][n])
+          tempArray.push(array[i][n]);
         }
         else{
-          tempArray.push(null)
+          tempArray.push(null);
         }
       }
       newArray.push(tempArray);
@@ -206,12 +206,12 @@ global.bruhdash = {
         if(array[i]===arguments[j]){
           count++;
         }
-      };
+      }
       if(count===0){
-        newArray.push(array[i])
+        newArray.push(array[i]);
       }
       count = 0;
-    };
+    }
     return newArray;
   },
 
@@ -220,28 +220,28 @@ global.bruhdash = {
     var iterate = function(nestedArray){
       for (var i = 0; i < nestedArray.length; i++) {
         if(!Array.isArray(nestedArray[i])){
-          newArray.push(nestedArray[i])
+          newArray.push(nestedArray[i]);
         }
         else{
           iterate(nestedArray[i]);
         }
-      };
+      }
     };
     if(!isDeep){
       for(var i = 0; i < array.length; i++) {
         if(Array.isArray(array[i])){
           for (var j = 0; j < array[i].length; j++) {
-            newArray.push(array[i][j])
-          };
+            newArray.push(array[i][j]);
+          }
         }
         else{
-          newArray.push(array[i])
+          newArray.push(array[i]);
         }
-      };
+      }
     }
 
     else{
-        iterate(array)
+        iterate(array);
     }
     return newArray;
   }
