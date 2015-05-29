@@ -165,11 +165,22 @@ global.bruhdash = {
 
   unzip: function (array) {
     var n=0;
+    var longest = 0;
+    for (var k = 0; k < array.length; k++) {
+      if(array[k].length>longest){
+        longest = array[k].length;
+      }
+    };
     var newArray = [];
     var tempArray = [];
-    while(n<array[0].length){
+    while(n<longest){
       for(var i=0; i<array.length; i++){
-        tempArray.push(array[i][n])
+        if(array[i][n] !== undefined && array[i] !== undefined){
+          tempArray.push(array[i][n])
+        }
+        else{
+          tempArray.push(null)
+        }
       }
       n++;
       newArray.push(tempArray);
